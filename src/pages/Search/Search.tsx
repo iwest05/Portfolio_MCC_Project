@@ -25,11 +25,26 @@ const SEARCH_INDEX: SearchItem[] = [
         title: "About",
         path: "/about",
         keywords: [
-            "about", "bio", "biography", "me", "who i am",
-            "background", "story", "experience", "education",
-            "skills", "interests", "goals", "mission"
+            // core about intent
+            "about", "about me", "bio", "biography", "me", "who i am",
+            "background", "story", "education", "student", "code school",
+            "class project", "portfolio v1", "learning", "work",
+
+            // focus areas you literally mention
+            "mobile-first", "responsive", "responsive design",
+            "accessibility", "a11y", "modern web", "clean ui", "ui",
+
+            // your current tech + roadmap badges
+            "html", "css", "javascript",
+            "react", "typescript", "next.js",
+            "java", "sql", "spring boot",
+            "aws", "agile",
+
+            // general matching terms people will type
+            "frontend", "front-end", "full stack", "full-stack",
+            "web development", "software", "developer"
         ],
-        excerpt: "Who I am and what I do.",
+        excerpt: "Student developer focused on mobile-first, responsive, accessible web experiences.",
     },
     {
         title: "Contact",

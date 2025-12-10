@@ -65,24 +65,3 @@
     font-size: 12px;
     font-weight: 600;
 }
-
-.hero-dots{
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 48px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.dot{
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.35);
-}
-
-.dot.is-active{
-    background: rgba(255,255,255,0.95);
-}
