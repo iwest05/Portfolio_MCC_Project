@@ -1,0 +1,259 @@
+:root{
+    --text: #f5f7ff;
+    --muted: #c9cde3;
+    --accent: #76d5ff;
+
+    --max: 1200px;
+    --h: 72px;
+
+    --content-max: 1200px;
+}
+
+/* reset */
+*{ box-sizing: border-box; }
+html, body, #root{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; }
+
+/* =========================
+   Header Shell
+   ========================= */
+.site-header{
+    height: var(--h);
+    width: 100%;
+    position: absolute;
+    top: 2vh;
+    left: 0;
+    z-index: 50;
+}
+
+.nav-container{
+    width: 100%;
+    height: var(--h);
+
+    padding-left: 30px;
+    padding-right: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+/* =========================
+   Brand badge (circle)
+   ========================= */
+.brand-group{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.brand-badge{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #24211D;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.brand-badge-img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    padding: 2px;
+}
+
+/* =========================
+   Right side cluster
+   ========================= */
+.nav-right{
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+    flex-shrink: 1;
+}
+
+/* =========================
+   Hamburger (mobile)
+   ========================= */
+.hamburger{
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 10px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.hamburger-bar{
+    width: 18px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    opacity: 0.95;
+}
+
+/* =========================
+   Nav
+   ========================= */
+.nav{
+    display: none;
+}
+
+.nav.is-open{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    position: absolute;
+    top: var(--h);
+    left: 0;
+    right: 0;
+
+    padding: 14px 16px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: none;
+    padding: 4px 2px;
+    transition: color .15s ease, text-shadow .15s ease;
+}
+
+.nav-link:hover{
+    color: var(--text);
+    text-shadow: 0 0 8px rgba(118,213,255,0.45);
+}
+
+.nav-link.is-active{
+    color: var(--text);
+}
+
+/* =========================
+   Search pill
+   ========================= */
+.search-pill{
+    display: none;
+}
+
+/* =========================
+   Desktop
+   ========================= */
+@media (min-width: 820px){
+    .hamburger{ display: none; }
+
+    .brand-group{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 0 0 auto;
+        width: auto;
+        justify-content: flex-start;
+    }
+
+    .nav-right{
+        flex: 0 1 auto;
+        min-width: 0;
+        white-space: nowrap;
+    }
+
+    .nav{
+        display: inline-flex;
+        align-items: center;
+        gap: 18px;
+
+    }
+
+    .nav-container{
+        height: var(--h);
+        width: 100%;
+
+        padding-left: 8vw;
+        padding-right: 80px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+
+        box-sizing: border-box;
+    }
+
+    .nav.is-open{
+        position: static;
+        padding: 0;
+        background: none;
+        border: 0;
+        backdrop-filter: none;
+    }
+
+    .nav-link{
+        color: rgba(255,255,255,0.85);
+    }
+
+
+
+    .search-pill{
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+
+        height: 34px;
+        padding: 0 12px;
+        border-radius: 999px;
+
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.22);
+        backdrop-filter: blur(8px);
+    }
+
+    .search-icon{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+
+        font-size: 1.2rem;
+        line-height: 1;
+        opacity: 0.9;
+    }
+
+    .search-input{
+        width: 140px;
+        background: transparent;
+        border: 0;
+        outline: 0;
+        color: var(--text);
+        font-size: 12px;
+    }
+
+    .search-input::placeholder{
+        color: rgba(255,255,255,0.7);
+    }
+}

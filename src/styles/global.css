@@ -1,0 +1,42 @@
+:root{
+    --bg-a: #07061f;
+    --bg-b: #160b3b;
+    --bg-c: #0b2a5a;
+
+    --text: #009dff;
+    --muted: #c8cde6;
+    --accent: #4aa3ff;
+
+    --max: 1200px;
+    --h: 64px;
+}
+
+*{ box-sizing: border-box; }
+
+html, body, #root{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+}
+
+body{
+    display: block;
+    min-height: 100vh;
+    color: var(--text);
+
+    background-image: url("../assets/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    pointer-events: none;
+    z-index: -1;
+}
