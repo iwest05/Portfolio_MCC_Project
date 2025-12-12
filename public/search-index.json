@@ -1,0 +1,101 @@
+[
+  {
+    "title": "Home",
+    "path": "/",
+    "excerpt": "Landing page and intro.",
+    "keywords": [
+      "home","homepage","landing","landing page","start","main","front page","index",
+      "welcome","hello","intro","introduction","overview","summary","site overview",
+      "hero","hero section","headline","tagline","call to action","cta","see more",
+      "portfolio","student portfolio","class portfolio","school portfolio","code school portfolio",
+      "developer portfolio","web developer portfolio","frontend portfolio","personal site","personal website",
+      "about this site","site navigation","nav","navbar","menu",
+      "responsive","mobile","mobile-first","desktop","layout","ui","ux","design","accessibility","a11y",
+      "react app","react site","typescript site","javascript site",
+      "lorem","lorem ipsum","placeholder","placeholder text"
+    ]
+  },
+  {
+    "title": "About",
+    "path": "/about",
+    "excerpt": "Student developer focused on clean, modern web experiences.",
+    "keywords": [
+      "about","about me","who am i","who i am","my story","bio","biography","background","profile","personal background",
+      "education","school","code school","bootcamp","class project","portfolio v1","learning","learning journey","self improvement",
+      "student developer","junior developer","entry level","new developer","aspiring developer","software developer","web developer",
+      "frontend","front-end","front end","full stack","full-stack","fullstack","web development","software engineering","software",
+      "mobile-first","mobile first","responsive","responsive design","responsive layout","accessibility","accessible","a11y",
+      "modern web","clean ui","ui","ux","interface","user interface","user experience","design system",
+      "react","reactjs","react.js","typescript","ts","javascript","js","html","css",
+      "next","nextjs","next.js",
+      "java","sql","spring","spring boot","springboot","aws","cloud","agile","scrum",
+      "technologies","tech stack","tools","languages","frameworks","libraries",
+      "projects button","see class work","contact button","resume button",
+      "portrait","photo","profile photo","headshot"
+    ]
+  },
+  {
+    "title": "Projects",
+    "path": "/projects",
+    "excerpt": "Projects and class work.",
+    "keywords": [
+      "projects","project","portfolio projects","my projects","class work","class projects","assignments","coursework","school work",
+      "work samples","examples","demos","demo","demo projects","showcase","showcase projects","case study","case studies",
+      "apps","applications","web apps","web applications","sites","websites",
+      "github","repo","repository","source","source code","code","code samples","codebase","commits",
+      "features","feature list","implementation","build","built","development","frontend build","ui build",
+      "react projects","typescript projects","javascript projects","html css projects",
+      "search project","filter","sort","responsive project","mobile-first project",
+      "school portfolio","student projects","beginner projects","intermediate projects",
+      "live demo","deployed","deployment","hosting","vercel","netlify","github pages"
+    ]
+  },
+  {
+    "title": "Contact",
+    "path": "/contact",
+    "excerpt": "Ways to get in touch.",
+    "keywords": [
+      "contact","contact me","get in touch","reach","reach out","message","send message","connect","connect with me",
+      "email","mail","mailto","send email","email me","email address",
+      "form","contact form","submit","send","message box","textarea","input","fields",
+      "first name","last name","name","your name","email field","message field",
+      "hire","hiring","job","work with me","collaborate","collaboration","freelance","contract","opportunity","opportunities",
+      "social","social links","social media","linkedin","github","twitter","x",
+      "network","networking","professional","professional contact","portfolio contact",
+      "questions","inquiries","inquiry","say hi","hello","feedback"
+    ]
+  },
+  {
+    "title": "Skills",
+    "path": "/skills",
+    "excerpt": "Technologies and tools I use.",
+    "keywords": [
+      "skills","my skills","tech stack","stack","technology stack","tools","tooling","languages","frameworks","libraries",
+      "frontend","front-end","front end","web dev","web development","software development","software engineering",
+      "html","html5","css","css3","javascript","js","typescript","ts",
+      "react","reactjs","react.js","router","react router","state","hooks","components","jsx","tsx",
+      "next","nextjs","next.js",
+      "ui","ux","responsive","mobile-first","accessibility","a11y","aria","semantic html",
+      "git","github","version control","branch","merge","pull request",
+      "node","npm","pnpm","vite","build tool","bundler",
+      "api","rest","json","fetch","http","async","promise",
+      "testing","debugging","devtools","chrome devtools",
+      "java","sql","spring","spring boot","aws","cloud","agile","scrum",
+      "soft skills","communication","teamwork","problem solving"
+    ]
+  },
+  {
+    "title": "Resume",
+    "path": "/resume",
+    "excerpt": "My experience and education summary.",
+    "keywords": [
+      "resume","my resume","cv","curriculum vitae","experience","education","work history","employment","jobs","job history",
+      "career","professional","professional experience","skills summary","summary","objective",
+      "download","pdf","resume pdf","print","printable","resume download",
+      "certifications","certificate","certs","credentials","training",
+      "projects on resume","portfolio on resume","references","contact info",
+      "internship","intern","entry level","junior","associate","new grad","graduate","college","school",
+      "timeline","roles","responsibilities","achievements","accomplishments"
+    ]
+  }
+]
