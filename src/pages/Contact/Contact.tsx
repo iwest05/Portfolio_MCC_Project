@@ -17,10 +17,13 @@ export default function Contact() {
       const email = String(form.get('email') || '').trim();
       const message = String(form.get('message') || '').trim();
 
-      const to = 'yukaidu.doralice@gmail.com'; // change to yours
-      const subject = `Portfolio Contact${first || last ? ` - ${first} ${last}` : ''}`.trim();
+      const to = 'iwest05@gmail.com';
+      const subject =
+         `Portfolio Contact${first || last ? ` - ${first} ${last}` : ''}`.trim();
       const body =
-         `Name: ${[first, last].filter(Boolean).join(' ') || 'N/A'}\n` + `Email: ${email || 'N/A'}\n\n` + `${message}`;
+         `Name: ${[first, last].filter(Boolean).join(' ') || 'N/A'}\n` +
+         `Email: ${email || 'N/A'}\n\n` +
+         `${message}`;
 
       window.location.href =
          `mailto:${encodeURIComponent(to)}` +
@@ -40,22 +43,36 @@ export default function Contact() {
                   <div className="contact-left">
                      <h1 className="contact-title">Get in Touch</h1>
 
-                     <p className="contact-subtitle">I'd like to hear from you!</p>
+                     <p className="contact-subtitle">
+                        I'd like to hear from you!
+                     </p>
 
                      <p className="contact-body">
-                        If you have any inquiries or just want to say hi, please use the contact form!
+                        If you have any inquiries or just want to say hi, please
+                        use the contact form!
                      </p>
 
                      <div className="contact-links">
-                        <a className="contact-email" href="mailto:yukaidu.doralice@gmail.com">
+                        <a
+                           className="contact-email"
+                           href="mailto:yukaidu.doralice@gmail.com"
+                        >
                            <span className="contact-icon" aria-hidden="true">
                               <SiMinutemailer />
                            </span>
                            iwest05@gmail.com
                         </a>
 
-                        <div className="contact-socials" aria-label="Social links">
-                           <a href="https://github.com/iwest05" target="_blank" rel="noreferrer" aria-label="GitHub">
+                        <div
+                           className="contact-socials"
+                           aria-label="Social links"
+                        >
+                           <a
+                              href="https://github.com/iwest05"
+                              target="_blank"
+                              rel="noreferrer"
+                              aria-label="GitHub"
+                           >
                               <FaGithub />
                            </a>
                            <a
@@ -66,7 +83,12 @@ export default function Contact() {
                            >
                               <CiLinkedin />
                            </a>
-                           <a href="https://x.com/iwest05" target="_blank" rel="noreferrer" aria-label="X">
+                           <a
+                              href="https://x.com/iwest05"
+                              target="_blank"
+                              rel="noreferrer"
+                              aria-label="X"
+                           >
                               <RiTwitterXFill />
                            </a>
                         </div>
@@ -79,12 +101,22 @@ export default function Contact() {
                         <div className="contact-row">
                            <div className="contact-field">
                               <label htmlFor="firstName">First Name</label>
-                              <input id="firstName" name="firstName" type="text" autoComplete="given-name" />
+                              <input
+                                 id="firstName"
+                                 name="firstName"
+                                 type="text"
+                                 autoComplete="given-name"
+                              />
                            </div>
 
                            <div className="contact-field">
                               <label htmlFor="lastName">Last Name</label>
-                              <input id="lastName" name="lastName" type="text" autoComplete="family-name" />
+                              <input
+                                 id="lastName"
+                                 name="lastName"
+                                 type="text"
+                                 autoComplete="family-name"
+                              />
                            </div>
                         </div>
 
@@ -92,7 +124,13 @@ export default function Contact() {
                            <label htmlFor="email">
                               Email <span aria-hidden="true">*</span>
                            </label>
-                           <input id="email" name="email" type="email" required autoComplete="email" />
+                           <input
+                              id="email"
+                              name="email"
+                              type="email"
+                              required
+                              autoComplete="email"
+                           />
                         </div>
 
                         <div className="contact-field">
@@ -104,7 +142,11 @@ export default function Contact() {
                            <button className="contact-btn" type="submit">
                               Send
                            </button>
-                           {status === 'sent' && <span className="contact-status">Opened your mail app.</span>}
+                           {status === 'sent' && (
+                              <span className="contact-status">
+                                 Opened your mail app.
+                              </span>
+                           )}
                         </div>
                      </form>
                   </div>
