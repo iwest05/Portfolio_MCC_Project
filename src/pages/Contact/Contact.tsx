@@ -1,12 +1,18 @@
 import './contact.css';
-import { type FormEvent, useState } from 'react';
+import { type ChangeEvent, type FormEvent, useState } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { CiLinkedin } from 'react-icons/ci';
 import { RiTwitterXFill } from 'react-icons/ri';
 import { SiMinutemailer } from 'react-icons/si';
 
 export default function Contact() {
-   const [status, setStatus] = useState<'idle' | 'sent'>('idle');
+
+   const [form, setForm] = useState({
+      firstName: "",
+      lastName: "",
+      email: "",
+      message: "",
+   });
 
    function onSubmit(e: FormEvent<HTMLFormElement>) {
       e.preventDefault();
@@ -30,8 +36,13 @@ export default function Contact() {
          `?subject=${encodeURIComponent(subject)}` +
          `&body=${encodeURIComponent(body)}`;
 
-      setStatus('sent');
-      e.currentTarget.reset();
+      setForm({ firstName: "", lastName: "", email: "", message: "" });
+   }
+
+   function handleChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+      const { name, value } = e.target;
+
+      setForm((prev) => ({ ...prev, [name]: value }));
    }
 
    return (
@@ -106,6 +117,8 @@ export default function Contact() {
                                  name="firstName"
                                  type="text"
                                  autoComplete="given-name"
+                                 value={form.firstName}
+                                 onChange={handleChange}
                               />
                            </div>
 
@@ -116,6 +129,8 @@ export default function Contact() {
                                  name="lastName"
                                  type="text"
                                  autoComplete="family-name"
+                                 value={form.lastName}
+                                 onChange={handleChange}
                               />
                            </div>
                         </div>
@@ -130,23 +145,26 @@ export default function Contact() {
                               type="email"
                               required
                               autoComplete="email"
+                              value={form.email}
+                              onChange={handleChange}
                            />
                         </div>
 
                         <div className="contact-field">
                            <label htmlFor="message">Message</label>
-                           <textarea id="message" name="message" rows={6} />
+                           <textarea
+                              id="message"
+                              name="message"
+                              rows={6}
+                              value={form.message}
+                              onChange={handleChange}
+                           />
                         </div>
 
                         <div className="contact-actions">
                            <button className="contact-btn" type="submit">
                               Send
                            </button>
-                           {status === 'sent' && (
-                              <span className="contact-status">
-                                 Opened your mail app.
-                              </span>
-                           )}
                         </div>
                      </form>
                   </div>
