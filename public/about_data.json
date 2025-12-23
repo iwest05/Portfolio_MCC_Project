@@ -1,0 +1,38 @@
+{
+  "page": {
+    "title": "About",
+    "subtitle": "Student developer focused on clean, modern web experiences.",
+    "body": "I’m focused on building responsive, accessible interfaces using React and TypeScript. I enjoy turning ideas into polished UI, learning best practices, and improving with each project. I’m currently expanding this site with new pages, stronger visuals, and better search as I add work.",
+    "experience": {
+      "years": 7,
+      "sentence": "years of self taught work before MCC Code School"
+    },
+    "photo": {
+      "alt": "Portrait",
+      "caption": "Currently building: polished, responsive experiences."
+    }
+  },
+  "badges": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "TypeScript",
+    "Next.js",
+    "Java",
+    "SQL",
+    "Spring Boot",
+    "AWS",
+    "Agile"
+  ],
+  "stats": [
+    { "value": "Portfolio v1", "label": "Class project build" },
+    { "value": "Mobile-first", "label": "Responsive layouts" },
+    { "value": "Learning", "label": "Shipping weekly improvements" }
+  ],
+  "cta": [
+    { "label": "See class work", "to": "https://github.com/iwest05", "variant": "primary" },
+    { "label": "Contact", "to": "/contact", "variant": "ghost" },
+    { "label": "Resume", "to": "/resume", "variant": "ghost" }
+  ]
+}
