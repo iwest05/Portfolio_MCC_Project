@@ -1,0 +1,25 @@
+.resume-page {
+    padding: 180px;
+}
+
+.resume-frame {
+    height: 80vh;
+}
+
+.resume-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.resume-links {
+    margin-top: 12px;
+}
+
+.resume-links a {
+    text-decoration: none;
+}
+
+.resume-links a:hover {
+    text-decoration: underline;
+}

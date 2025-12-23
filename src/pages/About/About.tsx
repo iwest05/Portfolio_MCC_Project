@@ -1,42 +1,82 @@
 import "./about.css";
-import aboutPhoto from "./ed394cca-fa98-488c-ba7f-f4f0e1baf799.jpg";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from 'react';
+
+type AboutData = {
+    page: {
+        title: string;
+        subtitle: string;
+        body: string;
+        experience:{
+            years: number;
+            sentence: string;
+        }
+        photo: {
+            alt: string;
+            caption: string;
+        };
+    };
+    badges: string[];
+    stats: Array<{ value: string; label: string }>;
+    cta: Array<{ label: string; to: string; variant: "primary" | "ghost" }>;
+};
 
 export default function About() {
     const navigate = useNavigate();
 
-    const BADGES = [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "React",
-        "TypeScript",
-        "Next.js",
-        "Java",
-        "SQL",
-        "Spring Boot",
-        "AWS",
-        "Agile",
-    ];
+    const [aboutData, setAboutData] = useState<AboutData | null>(null);
+    const [photoOfMe, setPhotoOfMe] = useState<string | null>(null);
+    const [error, setError] = useState("");
+
+    useEffect(() => {
+        let cancelled = false;
+
+        async function load() {
+            const res = await fetch("/about_data.json");
+
+            if (!res.ok) {
+                if (!cancelled) setError(`HTTP ${res.status}`);
+                return;
+            }
+
+            const data = (await res.json()) as AboutData;
+            if (cancelled) return;
+
+            setPhotoOfMe("/about_photo.jpg");
+            setAboutData(data);
+        }
+
+        load();
+        return () => {
+            cancelled = true;
+        };
+    }, []);
+
+    if (error) return <main className="about-page">Failed to load: {error}</main>;
+    if (!aboutData) return <main className="about-page">Loading...</main>;
+
+    const { page, badges, stats, cta } = aboutData;
 
     return (
         <main className="about-page">
             <div className="about-container">
                 <div className="about-content">
-                    <h1 className="about-title">About</h1>
+                    <h1 className="about-title">{page.title}</h1>
 
                     <p className="about-subtitle">
-                        Student developer focused on clean, modern web experiences.
+                        {page.subtitle}
                     </p>
 
                     <p className="about-body">
-                        I’m focused on building responsive, accessible interfaces using React and TypeScript.
-                        I enjoy turning ideas into polished UI, learning best practices, and improving with each project.
-                        I’m currently expanding this site with new pages, stronger visuals, and better search as I add work.
+                        {page.body}
+                    </p>
+
+                    <p className="about-experience">
+                       {page.experience.years} {page.experience.sentence}
                     </p>
 
                     <div className="about-badges">
-                        {BADGES.map((b) => (
+                        {badges.map((b) => (
                             <span key={b} className="about-badge">
                 {b}
               </span>
@@ -44,43 +84,45 @@ export default function About() {
                     </div>
 
                     <div className="about-stats">
-                        <div className="stat-card">
-                            <div className="stat-value">Portfolio v1</div>
-                            <div className="stat-label">Class project build</div>
-                        </div>
-
-                        <div className="stat-card">
-                            <div className="stat-value">Mobile-first</div>
-                            <div className="stat-label">Responsive layouts</div>
-                        </div>
-
-                        <div className="stat-card">
-                            <div className="stat-value">Learning</div>
-                            <div className="stat-label">Shipping weekly improvements</div>
-                        </div>
+                        {stats.map((s) => (
+                           <div key={`${s.value}-${s.label}`} className="stat-card">
+                               <div className="stat-value">{s.value}</div>
+                               <div className="stat-label">{s.label}</div>
+                           </div>
+                        ))}
                     </div>
 
                     <div className="about-cta">
-                        <button className="about-btn primary" onClick={() => navigate("/projects")}>
-                            See class work
-                        </button>
-                        <button className="about-btn ghost" onClick={() => navigate("/contact")}>
-                            Contact
-                        </button>
-                        <button className="about-btn ghost" onClick={() => navigate("/resume")}>
-                            Resume
-                        </button>
+                        {cta.map((btn) => {
+                            const isExternal = /^https?:\/\//.test(btn.to);
+
+                            return (
+                               <button
+                                  key={btn.to}
+                                  className={`about-btn ${btn.variant}`}
+                                  onClick={() => {
+                                      if (isExternal) {
+                                          window.open(btn.to, "_blank", "noopener,noreferrer");
+                                      } else {
+                                          navigate(btn.to);
+                                      }
+                                  }}
+                               >
+                                   {btn.label}
+                               </button>
+                            );
+                        })}
                     </div>
                 </div>
 
                 <div className="about-photo-wrap">
                     <div className="about-photo-frame">
-                        <img src={aboutPhoto} alt="Portrait" className="about-photo-img" />
+                        <img src={photoOfMe ?? undefined} alt={page.photo.alt} className="about-photo-img" />
                     </div>
 
                     <div className="about-photo-caption">
                         <span className="pulse-dot" />
-                        Currently building: polished, responsive experiences.
+                        {page.photo.caption}
                     </div>
                 </div>
             </div>
