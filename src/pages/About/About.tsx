@@ -21,12 +21,19 @@ type AboutData = {
     cta: Array<{ label: string; to: string; variant: "primary" | "ghost" }>;
 };
 
+type ChuckNorrisJoke = {
+    value: string;
+};
+
 export default function About() {
     const navigate = useNavigate();
 
     const [aboutData, setAboutData] = useState<AboutData | null>(null);
     const [photoOfMe, setPhotoOfMe] = useState<string | null>(null);
     const [error, setError] = useState("");
+
+    const [quote, setQuote] = useState("");
+    const [quoteError, setQuoteError] = useState("");
 
     useEffect(() => {
         let cancelled = false;
@@ -44,6 +51,21 @@ export default function About() {
 
             setPhotoOfMe("/about_photo.jpg");
             setAboutData(data);
+
+            try {
+                const quoteRes = await fetch("https://api.chucknorris.io/jokes/random");
+                if (!quoteRes.ok) {
+                    if (!cancelled) setQuoteError(`HTTP ${quoteRes.status}`);
+                    return;
+                }
+
+                const joke = (await quoteRes.json()) as ChuckNorrisJoke;
+                if (cancelled) return;
+
+                setQuote(joke.value);
+            } catch {
+                if (!cancelled) setQuoteError("Network error");
+            }
         }
 
         load();
@@ -126,6 +148,12 @@ export default function About() {
                     </div>
                 </div>
             </div>
+            {/* ✅ bottom-center quote (doesn't affect your layout/orientation) */}
+            {(quote || quoteError) && (
+               <div className="quote-bar" aria-live="polite">
+                   {quote ? `“${quote}”` : ""}
+               </div>
+            )}
         </main>
     );
 }

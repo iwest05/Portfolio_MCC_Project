@@ -4,6 +4,10 @@
 
 .resume-frame {
     height: 80vh;
+    width: 75%;
+    align-content: center;
+    margin: auto;
+    justify-content: center;
 }
 
 .resume-iframe {
@@ -14,6 +18,7 @@
 
 .resume-links {
     margin-top: 12px;
+    text-align: center;
 }
 
 .resume-links a {

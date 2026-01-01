@@ -1,6 +1,9 @@
 import './home.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+   const navigate = useNavigate();
+
    return (
       <section className="hero">
          <div className="bg" />
@@ -8,16 +11,15 @@ export default function Home() {
 
          <div className="container">
             <div className="content">
-               <h1 className="title">Lorem ipsum</h1>
-               <p className="subtitle">dolor sit amet</p>
+               <h1 className="title">Welcome to my portfolio</h1>
+               <p className="subtitle">React • TypeScript • UI + logic</p>
                <p className="body">
-                  This is placeholder text for your class portfolio. Replace
-                  this with a short summary of who you are and what you build.
+                  This site is a playground for what I’ve learned.
                </p>
 
-               <a className="cta" href="#">
+               <button className="cta" onClick={()=> navigate("/about")}>
                   See more
-               </a>
+               </button>
             </div>
          </div>
       </section>
