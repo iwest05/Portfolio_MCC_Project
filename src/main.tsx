@@ -1,13 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import Routes from "./App.tsx";
-import "./styles/global.css";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { HashRouter } from 'react-router-dom';
+import Routes from './App.tsx';
+import './styles/global.css';
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <Routes />
-        </BrowserRouter>
-    </React.StrictMode>
+ReactDOM.createRoot(document.getElementById('root')!).render(
+   <React.StrictMode>
+      <HashRouter>
+         <Routes />
+      </HashRouter>
+   </React.StrictMode>,
 );
