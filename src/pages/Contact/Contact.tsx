@@ -6,12 +6,11 @@ import { RiTwitterXFill } from 'react-icons/ri';
 import { SiMinutemailer } from 'react-icons/si';
 
 export default function Contact() {
-
    const [form, setForm] = useState({
-      firstName: "",
-      lastName: "",
-      email: "",
-      message: "",
+      firstName: '',
+      lastName: '',
+      email: '',
+      message: '',
    });
 
    function onSubmit(e: FormEvent<HTMLFormElement>) {
@@ -36,10 +35,12 @@ export default function Contact() {
          `?subject=${encodeURIComponent(subject)}` +
          `&body=${encodeURIComponent(body)}`;
 
-      setForm({ firstName: "", lastName: "", email: "", message: "" });
+      setForm({ firstName: '', lastName: '', email: '', message: '' });
    }
 
-   function handleChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+   function handleChange(
+      e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+   ) {
       const { name, value } = e.target;
 
       setForm((prev) => ({ ...prev, [name]: value }));
@@ -95,7 +96,7 @@ export default function Contact() {
                               <CiLinkedin />
                            </a>
                            <a
-                              href="https://x.com/iwest05"
+                              href="https://x.com/"
                               target="_blank"
                               rel="noreferrer"
                               aria-label="X"
