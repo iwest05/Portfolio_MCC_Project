@@ -66,25 +66,6 @@
     ]
   },
   {
-    "title": "Skills",
-    "path": "/skills",
-    "excerpt": "Technologies and tools I use.",
-    "keywords": [
-      "skills","my skills","tech stack","stack","technology stack","tools","tooling","languages","frameworks","libraries",
-      "frontend","front-end","front end","web dev","web development","software development","software engineering",
-      "html","html5","css","css3","javascript","js","typescript","ts",
-      "react","reactjs","react.js","router","react router","state","hooks","components","jsx","tsx",
-      "next","nextjs","next.js",
-      "ui","ux","responsive","mobile-first","accessibility","a11y","aria","semantic html",
-      "git","github","version control","branch","merge","pull request",
-      "node","npm","pnpm","vite","build tool","bundler",
-      "api","rest","json","fetch","http","async","promise",
-      "testing","debugging","devtools","chrome devtools",
-      "java","sql","spring","spring boot","aws","cloud","agile","scrum",
-      "soft skills","communication","teamwork","problem solving"
-    ]
-  },
-  {
     "title": "Resume",
     "path": "/resume",
     "excerpt": "My experience and education summary.",
@@ -96,6 +77,33 @@
       "projects on resume","portfolio on resume","references","contact info",
       "internship","intern","entry level","junior","associate","new grad","graduate","college","school",
       "timeline","roles","responsibilities","achievements","accomplishments"
+    ]
+  },
+  {
+    "title": "Maduro",
+    "path": "/maduro",
+    "excerpt": "Maduro",
+    "keywords": [
+      "Maduro",
+      "Nicolás Maduro",
+      "Venezuela",
+      "Caracas",
+      "Miraflores",
+      "PSUV",
+      "Chavismo",
+      "Bolivarian Revolution",
+      "Maduro dancing",
+      "Maduro meme",
+      "Maburro"
+    ]
+  }
+,
+  {
+    "title": "Diddy",
+    "path": "/diddy",
+    "excerpt": "Diddy",
+    "keywords": [
+      "Diddy", "Oil", "Baby","Sean Combs", "Puff Daddy", "Puffy"
     ]
   }
 ]
