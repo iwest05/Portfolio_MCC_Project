@@ -6,7 +6,7 @@ export default function Diddy() {
    useEffect(() => {
       let objectUrl: string | null = null;
 
-      fetch('/img.png')
+      fetch(`${import.meta.env.BASE_URL}img.png`)
          .then((res) => {
             if (!res.ok) throw new Error(`Failed to fetch gif: ${res.status}`);
             return res.blob();

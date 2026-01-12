@@ -6,7 +6,7 @@ export default function Maduro() {
    useEffect(() => {
       let objectUrl: string | null = null;
 
-      fetch('/maduro-dancing-fox-news-001.gif')
+      fetch(`${import.meta.env.BASE_URL}maduro-dancing-fox-news-001.gif`)
          .then((res) => {
             if (!res.ok) throw new Error(`Failed to fetch gif: ${res.status}`);
             return res.blob();
