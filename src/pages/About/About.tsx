@@ -49,7 +49,7 @@ export default function About() {
          const data = (await res.json()) as AboutData;
          if (cancelled) return;
 
-         setPhotoOfMe('/about_photo.jpg');
+         setPhotoOfMe(`${import.meta.env.BASE_URL}about_photo.jpg`);
          setAboutData(data);
 
          try {
