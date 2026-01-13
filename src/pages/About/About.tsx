@@ -39,7 +39,7 @@ export default function About() {
       let cancelled = false;
 
       async function load() {
-         const res = await fetch('/about_data.json');
+         const res = await fetch(`${import.meta.env.BASE_URL}about_data.json`);
 
          if (!res.ok) {
             if (!cancelled) setError(`HTTP ${res.status}`);
@@ -49,7 +49,7 @@ export default function About() {
          const data = (await res.json()) as AboutData;
          if (cancelled) return;
 
-         setPhotoOfMe('/about_photo.jpg');
+         setPhotoOfMe(`${import.meta.env.BASE_URL}about_photo.jpg`);
          setAboutData(data);
 
          try {

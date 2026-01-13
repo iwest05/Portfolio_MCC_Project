@@ -39,7 +39,7 @@ export default function Resume() {
             <a href="/Iain West.pdf" target="_blank" rel="noopener noreferrer">
                Open in new tab
             </a>
-            {' · '}
+            {" · "}
             <a href="/Iain West.pdf" download>
                Download
             </a>

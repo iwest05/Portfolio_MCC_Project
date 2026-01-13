@@ -21,7 +21,7 @@ export default function Search() {
 
       (async () => {
          try {
-            const res = await fetch('/search-index.json'); // put file in /public for this path
+            const res = await fetch(`${import.meta.env.BASE_URL}search-index.json`); // put file in /public for this path
             const data = (await res.json()) as SearchItem[];
             if (alive) setIndex(data);
          } catch {
