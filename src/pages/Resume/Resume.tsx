@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 export default function Resume() {
    const [isMobile, setIsMobile] = useState(false);
 
+   const resumeUrl = `${import.meta.env.BASE_URL}Iain%20West.pdf`;
+
    useEffect(() => {
       const mq = window.matchMedia('(max-width: 768px)');
       const apply = () => setIsMobile(mq.matches);
@@ -17,7 +19,7 @@ export default function Resume() {
       return (
          <main className="resume-page">
             <p className="resume-links">
-               <a href="/Iain West.pdf" download>
+               <a href={resumeUrl} download>
                   Download
                </a>
             </p>
@@ -28,19 +30,15 @@ export default function Resume() {
    return (
       <main className="resume-page">
          <div className="resume-frame">
-            <iframe
-               src="/Iain West.pdf"
-               title="Resume"
-               className="resume-iframe"
-            />
+            <iframe src={resumeUrl} title="Resume" className="resume-iframe" />
          </div>
 
          <p className="resume-links">
-            <a href="/Iain West.pdf" target="_blank" rel="noopener noreferrer">
+            <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
                Open in new tab
             </a>
-            {" · "}
-            <a href="/Iain West.pdf" download>
+            {' · '}
+            <a href={resumeUrl} download>
                Download
             </a>
          </p>
