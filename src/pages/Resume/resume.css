@@ -28,3 +28,38 @@
 .resume-links a:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+    .resume-page {
+        padding: 96px 20px 32px;
+    }
+
+    .resume-links {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .resume-links a {
+        display: inline-block;
+        width: min(420px, 100%);
+        padding: 16px 18px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1.05rem;
+        letter-spacing: 0.2px;
+        text-align: center;
+        text-decoration: none;
+
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .resume-links a:active {
+        transform: scale(0.98);
+    }
+}
