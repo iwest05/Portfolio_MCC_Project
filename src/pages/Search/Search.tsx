@@ -11,7 +11,7 @@ type SearchItem = {
 
 export default function Search() {
    const [params] = useSearchParams();
-   const q = (params.get('q') ?? '').trim().toLowerCase();
+   const query = (params.get('data') ?? '').trim().toLowerCase();
 
    const [index, setIndex] = useState<SearchItem[]>([]);
    const [loading, setLoading] = useState(true);
@@ -37,9 +37,9 @@ export default function Search() {
    }, []);
 
    const results = useMemo(() => {
-      if (!q) return [];
+      if (!query) return [];
 
-      const tokens = q.split(/\s+/).filter(Boolean);
+      const tokens = query.split(/\s+/).filter(Boolean);
 
       return index.filter((item) => {
          const hay = [item.title, ...(item.keywords ?? []), item.excerpt ?? '']
@@ -48,7 +48,7 @@ export default function Search() {
 
          return tokens.some((t) => hay.includes(t));
       });
-   }, [q, index]);
+   }, [query, index]);
 
    return (
       <section className="page page-search">
@@ -56,14 +56,14 @@ export default function Search() {
             <div className="page-content">
                <h1 className="page-title">Search</h1>
                <p className="page-subtitle">
-                  Query: <strong>{q || '—'}</strong>
+                  Query: <strong>{query || '—'}</strong>
                </p>
 
                {loading && <p className="page-body">Loading search…</p>}
-               {!loading && !q && (
+               {!loading && !query && (
                   <p className="page-body">Type a search in the header.</p>
                )}
-               {!loading && q && results.length === 0 && (
+               {!loading && query && results.length === 0 && (
                   <p className="page-body">No results found.</p>
                )}
 
